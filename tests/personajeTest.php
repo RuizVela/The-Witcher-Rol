@@ -27,19 +27,24 @@ class PersonajeTest extends TestCase
         $this->assertEquals($this->personaje->getCaracteristica('int'),$this->caracteristicas['int']);
     }
 
-    public function test_set_agu_funciona()
+    public function test_setAgu_funciona()
     {
         $agu=55;
         $this->assertEquals($this->personaje->getAgu(),$agu);
     }
-    public function test_set_pv_funciona()
+    public function test_setPv_funciona()
     {
         $pv=55;
         $this->assertEquals($this->personaje->getpv(),$pv);
     }
-    public function test_set_atu_funciona()
+    public function test_setAtu_funciona()
     {
         $atu = 10;
         $this->assertEquals($this->personaje->getAtu(),$atu);
+    }
+    public function test_setRec_funciona()
+    {
+        $rec=11;
+        $this->assertEquals($this->personaje->getRec(),$rec);
     }
 }

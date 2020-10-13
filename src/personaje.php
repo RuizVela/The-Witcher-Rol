@@ -7,11 +7,13 @@ class Personaje
         $this->caracteristicas=$caracteristicas;
         $this->setAguYPv();
         $this->setAtu();
+        $this->setRec();
     }
     private $caracteristicas;
     private $agu;
     private $pv;
     private $atu;
+    private $rec;
 
     private function calcularFisico()
     {
@@ -19,17 +21,15 @@ class Personaje
         $media = floor($suma/2);
         return $media;
     }
-    public function setAguYPv()
+    private function setAguYPv()
     {
-        //TODO: cambiar public a private
         $fisico = $this->calcularFisico();
         $value = $fisico*5;
         $this->agu=$value;
         $this->pv=$value;
     }
-    public function setAtu()
+    private function setAtu()
     {
-        //TODO: cambiar public a private
         $fisico = $this->calcularFisico();
         if ($fisico>10)
         {
@@ -37,6 +37,11 @@ class Personaje
             return;
         }
         $this->atu=$fisico;
+    }
+    private function setRec()
+    {
+        $fisico = $this->calcularFisico();
+        $this->rec=$fisico;
     }
 
     public function getCaracteristica($caracteristica)
@@ -54,5 +59,9 @@ class Personaje
     public function getAtu()
     {
         return $this->atu;
+    }
+    public function getRec()
+    {
+        return $this->rec;
     }
 }
