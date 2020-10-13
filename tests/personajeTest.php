@@ -9,7 +9,7 @@ class PersonajeTest extends TestCase
         'ref'=>5,
         'des'=>7,
         'tco'=>10,
-        'mov'=>5,
+        'mov'=>1,
         'emp'=>9,
         'tec'=>2,
         'vol'=>13,
@@ -49,12 +49,12 @@ class PersonajeTest extends TestCase
     }
     public function test_setCarr_funciona()
     {
-        $carr=15;
+        $carr=3;
         $this->assertEquals($this->personaje->getCaracteristicaDerivada('carr'),$carr);
     }
     public function test_setSal_funciona()
     {
-        $sal=3;
+        $sal=0;
         $this->assertEquals($this->personaje->getCaracteristicaDerivada('sal'),$sal);
     }
     public function test_setEst_funciona()
@@ -62,4 +62,5 @@ class PersonajeTest extends TestCase
         $est=100;
         $this->assertEquals($this->personaje->getCaracteristicaDerivada('est'),$est);
     }
+
 }

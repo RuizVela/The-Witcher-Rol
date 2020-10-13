@@ -54,7 +54,7 @@ class Personaje
     }
     private function setSal()
     {
-        $sal = $this->caracteristicasDerivadas['carr']/5;
+        $sal = floor($this->caracteristicasDerivadas['carr']/5);
         $this->caracteristicasDerivadas['sal']=$sal;
     }
     private function setEst()
