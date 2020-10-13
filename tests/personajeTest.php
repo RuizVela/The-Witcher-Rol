@@ -4,55 +4,42 @@ require __DIR__ . "/../src/Personaje.php";
 
 class PersonajeTest extends TestCase
 {
+    private $caracteristicas = array(
+        'int'=>6,
+        'ref'=>5,
+        'des'=>7,
+        'tco'=>10,
+        'mov'=>1,
+        'emp'=>9,
+        'tec'=>2,
+        'vol'=>13,
+        'sue'=>4
+    );
+    private $personaje;
+    public function setUp() :void
+    {
+        parent::setUp();
+        $this->personaje = new Personaje($this->caracteristicas);
+    }
     public function test_constructor_de_caracteristicas_funciona()
     {
-        $caracteristicas = array(
-            'int'=>6,
-            'ref'=>5,
-            'des'=>7,
-            'tco'=>8,
-            'mov'=>1,
-            'emp'=>9,
-            'tec'=>2,
-            'vol'=>3,
-            'sue'=>4
-        );
-        $personaje = new Personaje($caracteristicas);
-        $this->assertEquals($personaje->getCaracteristica('int'),$caracteristicas['int']);
+
+        $this->assertEquals($this->personaje->getCaracteristica('int'),$this->caracteristicas['int']);
     }
 
-    public function test_set_AGU_funciona()
+    public function test_set_agu_funciona()
     {
-        $caracteristicas = array(
-            'int'=>6,
-            'ref'=>5,
-            'des'=>7,
-            'tco'=>8,
-            'mov'=>1,
-            'emp'=>9,
-            'tec'=>2,
-            'vol'=>3,
-            'sue'=>4
-        );
-        $agu=25;
-        $personaje = new Personaje($caracteristicas);
-        $this->assertEquals($personaje->getAgu(),$agu);
+        $agu=55;
+        $this->assertEquals($this->personaje->getAgu(),$agu);
     }
     public function test_set_pv_funciona()
     {
-        $caracteristicas = array(
-            'int'=>6,
-            'ref'=>5,
-            'des'=>7,
-            'tco'=>8,
-            'mov'=>1,
-            'emp'=>9,
-            'tec'=>2,
-            'vol'=>3,
-            'sue'=>4
-        );
-        $pv=25;
-        $personaje = new Personaje($caracteristicas);
-        $this->assertEquals($personaje->getpv(),$pv);
+        $pv=55;
+        $this->assertEquals($this->personaje->getpv(),$pv);
+    }
+    public function test_set_atu_funciona()
+    {
+        $atu = 10;
+        $this->assertEquals($this->personaje->getAtu(),$atu);
     }
 }
