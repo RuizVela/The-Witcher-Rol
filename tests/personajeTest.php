@@ -38,4 +38,21 @@ class PersonajeTest extends TestCase
         $personaje = new Personaje($caracteristicas);
         $this->assertEquals($personaje->getAgu(),$agu);
     }
+    public function test_set_pv_funciona()
+    {
+        $caracteristicas = array(
+            'int'=>6,
+            'ref'=>5,
+            'des'=>7,
+            'tco'=>8,
+            'mov'=>1,
+            'emp'=>9,
+            'tec'=>2,
+            'vol'=>3,
+            'sue'=>4
+        );
+        $pv=25;
+        $personaje = new Personaje($caracteristicas);
+        $this->assertEquals($personaje->getpv(),$pv);
+    }
 }
