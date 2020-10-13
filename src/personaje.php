@@ -8,12 +8,14 @@ class Personaje
         $this->setAguYPv();
         $this->setAtu();
         $this->setRec();
+        $this->setCarr();
     }
     private $caracteristicas;
     private $agu;
     private $pv;
     private $atu;
     private $rec;
+    private $carr;
 
     private function calcularFisico()
     {
@@ -43,6 +45,11 @@ class Personaje
         $fisico = $this->calcularFisico();
         $this->rec=$fisico;
     }
+    private function setCarr()
+    {
+        $carr=$this->caracteristicas['mov']*3;
+        $this->carr=$carr;
+    }
 
     public function getCaracteristica($caracteristica)
     {
@@ -63,5 +70,9 @@ class Personaje
     public function getRec()
     {
         return $this->rec;
+    }
+    public function getCarr()
+    {
+        return $this->carr;
     }
 }

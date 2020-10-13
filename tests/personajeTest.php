@@ -9,7 +9,7 @@ class PersonajeTest extends TestCase
         'ref'=>5,
         'des'=>7,
         'tco'=>10,
-        'mov'=>1,
+        'mov'=>5,
         'emp'=>9,
         'tec'=>2,
         'vol'=>13,
@@ -46,5 +46,10 @@ class PersonajeTest extends TestCase
     {
         $rec=11;
         $this->assertEquals($this->personaje->getRec(),$rec);
+    }
+    public function test_setCarr_funciona()
+    {
+        $carr=15;
+        $this->assertEquals($this->personaje->getCarr(),$carr);
     }
 }
