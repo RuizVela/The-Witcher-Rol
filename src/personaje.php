@@ -16,6 +16,7 @@ class Personaje
         $this->setAtu();
         $this->setRec();
         $this->setCarr();
+        $this->setSal();
     }
     private function calcularFisico()
     {
@@ -49,6 +50,11 @@ class Personaje
     {
         $carr=$this->caracteristicas['mov']*3;
         $this->caracteristicasDerivadas['carr']=$carr;
+    }
+    private function setSal()
+    {
+        $sal = $this->caracteristicasDerivadas['carr']/5;
+        $this->caracteristicasDerivadas['sal']=$sal;
     }
 
     public function getCaracteristica($caracteristica)

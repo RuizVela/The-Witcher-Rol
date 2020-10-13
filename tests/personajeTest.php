@@ -52,4 +52,9 @@ class PersonajeTest extends TestCase
         $carr=15;
         $this->assertEquals($this->personaje->getCaracteristicaDerivada('carr'),$carr);
     }
+    public function test_setSal_funciona()
+    {
+        $sal=3;
+        $this->assertEquals($this->personaje->getCaracteristicaDerivada('sal'),$sal);
+    }
 }
