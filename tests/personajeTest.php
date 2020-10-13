@@ -57,4 +57,9 @@ class PersonajeTest extends TestCase
         $sal=3;
         $this->assertEquals($this->personaje->getCaracteristicaDerivada('sal'),$sal);
     }
+    public function test_setEst_funciona()
+    {
+        $est=100;
+        $this->assertEquals($this->personaje->getCaracteristicaDerivada('est'),$est);
+    }
 }
