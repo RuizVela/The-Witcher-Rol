@@ -5,18 +5,18 @@ class Personaje
     function __construct($caracteristicas)
     {
         $this->caracteristicas=$caracteristicas;
+        $this->setCaracteristicasDerivadas();
+    }
+    private $caracteristicas;
+    private $caracteristicasDerivadas;
+
+    private function setCaracteristicasDerivadas()
+    {
         $this->setAguYPv();
         $this->setAtu();
         $this->setRec();
         $this->setCarr();
     }
-    private $caracteristicas;
-    private $agu;
-    private $pv;
-    private $atu;
-    private $rec;
-    private $carr;
-
     private function calcularFisico()
     {
         $suma = $this->caracteristicas['tco']+$this->caracteristicas['vol'];
@@ -27,52 +27,36 @@ class Personaje
     {
         $fisico = $this->calcularFisico();
         $value = $fisico*5;
-        $this->agu=$value;
-        $this->pv=$value;
+        $this->caracteristicasDerivadas['agu']=$value;
+        $this->caracteristicasDerivadas['pv']=$value;
     }
     private function setAtu()
     {
         $fisico = $this->calcularFisico();
         if ($fisico>10)
         {
-            $this->atu=10;
+            $this->caracteristicasDerivadas['atu']=10;
             return;
         }
-        $this->atu=$fisico;
+        $this->caracteristicasDerivadas['atu']=$fisico;
     }
     private function setRec()
     {
         $fisico = $this->calcularFisico();
-        $this->rec=$fisico;
+        $this->caracteristicasDerivadas['rec']=$fisico;
     }
     private function setCarr()
     {
         $carr=$this->caracteristicas['mov']*3;
-        $this->carr=$carr;
+        $this->caracteristicasDerivadas['carr']=$carr;
     }
 
     public function getCaracteristica($caracteristica)
     {
         return $this->caracteristicas[$caracteristica];
     }
-    public function getAgu()
+    public function getCaracteristicaDerivada($derivada)
     {
-        return $this->agu;
-    }
-    public function getPv()
-    {
-        return $this->pv;
-    }
-    public function getAtu()
-    {
-        return $this->atu;
-    }
-    public function getRec()
-    {
-        return $this->rec;
-    }
-    public function getCarr()
-    {
-        return $this->carr;
+        return $this->caracteristicasDerivadas[$derivada];
     }
 }
