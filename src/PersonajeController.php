@@ -4,8 +4,9 @@ class PersonajeController
 {
     static function crear($personaje)
     {
-            $json_string = json_encode($personaje);
-            $file = $personaje['nombre'].'.json';
+            $vars = $personaje->jsonSerialize();
+            $json_string = json_encode($vars);
+            $file = $vars['nombre'].'.json';
             file_put_contents($file,$json_string);
     }
     static function abrir($file)

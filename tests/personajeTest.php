@@ -66,8 +66,7 @@ class PersonajeTest extends TestCase
     }
     public function test_guardar_hoja_de_personaje()
     {
-        $vars = $this->personaje->jsonSerialize();
-        PersonajeController::crear($vars);
+        PersonajeController::crear($this->personaje);
         $file = $this->nombre.'.json';
         $personaje_json = json_decode(file_get_contents($file));
         $file_writed = $personaje_json->nombre == $this->nombre;
@@ -75,9 +74,8 @@ class PersonajeTest extends TestCase
         unlink($file);
     }
     public function test_abrir_hoja_de_personaje()
-    {        
-        $vars = $this->personaje->jsonSerialize();
-        PersonajeController::crear($vars);
+    {   
+        PersonajeController::crear($this->personaje);
         $file = $this->nombre.'.json';
         $personaje = PersonajeController::abrir($file);
         $this->assertEquals($personaje,$this->personaje);
