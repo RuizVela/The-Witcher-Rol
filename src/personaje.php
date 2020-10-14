@@ -1,14 +1,22 @@
 <?php
 
-class Personaje 
+class Personaje implements JsonSerializable 
 {
-    function __construct($caracteristicas)
+    function __construct($nombre,$caracteristicas)
     {
+        $this->nombre = $nombre;
         $this->caracteristicas=$caracteristicas;
         $this->setCaracteristicasDerivadas();
     }
+    private $nombre;
     private $caracteristicas;
     private $caracteristicasDerivadas;
+
+    public function jsonSerialize()
+    {
+        $vars = get_object_vars($this);
+        return $vars;
+    }
 
     private function setCaracteristicasDerivadas()
     {
