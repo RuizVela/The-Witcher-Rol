@@ -1,14 +1,14 @@
-<form action="Personaje.php" method="post">
-    <p>Nombre del Personaje: <input type="text" name="nombre" /></p>
-    <p>INT: <input type="number" name="caracteristicas[int]" /></p>
-    <p>REF: <input type="number" name="caracteristicas[ref]" /></p>
-    <p>DES: <input type="number" name="caracteristicas[des]" /></p>
-    <p>TCO: <input type="number" name="caracteristicas[tco]" /></p>
-    <p>MOV: <input type="number" name="caracteristicas[mov]" /></p>
-    <p>EMP: <input type="number" name="caracteristicas[emp]" /></p>
-    <p>TEC: <input type="number" name="caracteristicas[tec]" /></p>
-    <p>VOL: <input type="number" name="caracteristicas[vol]" /></p>
-    <p>SUE: <input type="number" name="caracteristicas[sue]" /></p>
+<form action="crear.php" method="post">
+    <p>Nombre del Personaje: <input required type="text" name="nombre" /></p>
+    <p>INT: <input required min="1" max="13" type="number" name="caracteristicas[int]" value="1"/></p>
+    <p>REF: <input required min="1" max="13" type="number" name="caracteristicas[ref]" value="1"/></p>
+    <p>DES: <input required min="1" max="13" type="number" name="caracteristicas[des]" value="1"/></p>
+    <p>TCO: <input required min="1" max="13" type="number" name="caracteristicas[tco]" value="1"/></p>
+    <p>MOV: <input required min="1" max="13" type="number" name="caracteristicas[mov]" value="1"/></p>
+    <p>EMP: <input required min="1" max="13" type="number" name="caracteristicas[emp]" value="1"/></p>
+    <p>TEC: <input required min="1" max="13" type="number" name="caracteristicas[tec]" value="1"/></p>
+    <p>VOL: <input required min="1" max="13" type="number" name="caracteristicas[vol]" value="1"/></p>
+    <p>SUE: <input required min="1" max="13" type="number" name="caracteristicas[sue]" value="1"/></p>
     <p><input type="submit" /></p>
    </form>
 
