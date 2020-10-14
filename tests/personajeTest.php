@@ -64,7 +64,7 @@ class PersonajeTest extends TestCase
         $est=100;
         $this->assertEquals($this->personaje->getCaracteristicaDerivada('est'),$est);
     }
-    public function test_guardar_personaje()
+    public function test_guardar_hoja_de_personaje()
     {
         $vars = $this->personaje->jsonSerialize();
         PersonajeController::crear($vars);
@@ -72,6 +72,15 @@ class PersonajeTest extends TestCase
         $personaje_json = json_decode(file_get_contents($file));
         $file_writed = $personaje_json->nombre == $this->nombre;
         $this->assertTrue($file_writed);
+        unlink($file);
+    }
+    public function test_abrir_hoja_de_personaje()
+    {        
+        $vars = $this->personaje->jsonSerialize();
+        PersonajeController::crear($vars);
+        $file = $this->nombre.'.json';
+        $personaje = PersonajeController::abrir($file);
+        $this->assertEquals($personaje,$this->personaje);
         unlink($file);
     }
 }
