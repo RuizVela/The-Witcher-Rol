@@ -13,7 +13,8 @@ class PersonajeController
     {
        $personaje_json = json_decode(file_get_contents($file));
        $caracteristicas = json_decode(json_encode($personaje_json->caracteristicas), true);
-       $personaje = new Personaje($personaje_json->nombre, $caracteristicas);
+       $habilidades = json_decode(json_encode($personaje_json->habilidades), true);
+       $personaje = new Personaje($personaje_json->nombre, $caracteristicas, $habilidades);
        return $personaje;
     }
 }

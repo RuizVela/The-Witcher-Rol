@@ -17,11 +17,21 @@ class PersonajeTest extends TestCase
         'vol'=>13,
         'sue'=>4
     );
+    private $habilidades = array(
+        'int'=>array('advertir'=>1, 'callejeo'=>2),
+        'ref'=>array('espada'=>6, 'esquivar'=>6),
+        'des'=>array(),
+        'tco'=>array(),
+        'emp'=>array(),
+        'tec'=>array(),
+        'vol'=>array()
+    );
+    
     private $personaje;
     public function setUp() :void
     {
         parent::setUp();
-        $this->personaje = new Personaje($this->nombre, $this->caracteristicas);
+        $this->personaje = new Personaje($this->nombre, $this->caracteristicas, $this->habilidades);
     }
     public function test_constructor_de_caracteristicas_funciona()
     {
