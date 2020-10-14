@@ -70,7 +70,14 @@ class Personaje implements JsonSerializable
         $est = $this->caracteristicas['tco']*10;
         $this->caracteristicasDerivadas['est']=$est;
     }
-
+    public function getCaracteristicas()
+    {
+        return $this->caracteristicas;
+    }
+    public function getCaracteristicasDerivadas()
+    {
+        return $this->caracteristicasDerivadas;
+    }
     public function getCaracteristica($caracteristica)
     {
         return $this->caracteristicas[$caracteristica];
