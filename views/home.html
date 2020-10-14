@@ -1,20 +1,104 @@
+<style>
+div{
+    display: inline-block;
+    border: 2px;
+    border-style: solid;
+}
+</style>
 <form action="crear.php" method="post">
-    <p>Nombre del Personaje: <input required type="text" name="nombre" /></p>
-    <p>INT: <input required min="1" max="13" type="number" name="caracteristicas[int]" value="1"/></p>
-    <p>REF: <input required min="1" max="13" type="number" name="caracteristicas[ref]" value="1"/></p>
-    <p>DES: <input required min="1" max="13" type="number" name="caracteristicas[des]" value="1"/></p>
-    <p>TCO: <input required min="1" max="13" type="number" name="caracteristicas[tco]" value="1"/></p>
-    <p>MOV: <input required min="1" max="13" type="number" name="caracteristicas[mov]" value="1"/></p>
-    <p>EMP: <input required min="1" max="13" type="number" name="caracteristicas[emp]" value="1"/></p>
-    <p>TEC: <input required min="1" max="13" type="number" name="caracteristicas[tec]" value="1"/></p>
-    <p>VOL: <input required min="1" max="13" type="number" name="caracteristicas[vol]" value="1"/></p>
-    <p>SUE: <input required min="1" max="13" type="number" name="caracteristicas[sue]" value="1"/></p>
+        <p>Nombre del Personaje: <input required type="text" name="nombre" /></p>
+        <div class=caracteristicas>
+            <label>caracteristicas</label>
+            <p>INT: <input required min="1" max="13" type="number" name="caracteristicas[int]" value="1"/></p>
+            <p>REF: <input required min="1" max="13" type="number" name="caracteristicas[ref]" value="1"/></p>
+            <p>DES: <input required min="1" max="13" type="number" name="caracteristicas[des]" value="1"/></p>
+            <p>TCO: <input required min="1" max="13" type="number" name="caracteristicas[tco]" value="1"/></p>
+            <p>MOV: <input required min="1" max="13" type="number" name="caracteristicas[mov]" value="1"/></p>
+            <p>EMP: <input required min="1" max="13" type="number" name="caracteristicas[emp]" value="1"/></p>
+            <p>TEC: <input required min="1" max="13" type="number" name="caracteristicas[tec]" value="1"/></p>
+            <p>VOL: <input required min="1" max="13" type="number" name="caracteristicas[vol]" value="1"/></p>
+            <p>SUE: <input required min="1" max="13" type="number" name="caracteristicas[sue]" value="1"/></p>
+        </div>
+    <div class="habilidades" id="int">
+        <label>Habilidades de Inteligencia</label>
+        <p> Advertir<input required min="0" max="10" value="0" type="number" name="habilidades[int][advertir]"/></p>
+        <p> Callejeo<input required min="0" max="10" value="0" type="number" name="habilidades[int][callejeo]"/></p>
+        <p> Cultura<input required min="0" max="10" value="0" type="number" name="habilidades[int][cultura]"/></p>
+        <p> Deduccion<input required min="0" max="10" value="0" type="number" name="habilidades[int][deduccion]"/></p>
+        <p> Enseñar<input required min="0" max="10" value="0" type="number" name="habilidades[int][ensenar]"/></p>
+        <p> Etiqueta<input required min="0" max="10" value="0" type="number" name="habilidades[int][etiqueta]"/></p>
+        <p> Lengua Antigua<input required min="0" max="10" value="0" type="number" name="habilidades[int][lAntigua]"/></p>
+        <p> Lengua Enanés<input required min="0" max="10" value="0" type="number" name="habilidades[int][lEnanes]"/></p>
+        <p> Lengua Norteña<input required min="0" max="10" value="0" type="number" name="habilidades[int][lNorte]"/></p>
+        <p> Negociar<input required min="0" max="10" value="0" type="number" name="habilidades[int][negociar]"/></p>
+        <p> Saber de Monstruos<input required min="0" max="10" value="0" type="number" name="habilidades[int][saberMonstruos]"/></p>
+        <p> Supervivencia<input required min="0" max="10" value="0" type="number" name="habilidades[int][supervivencia]"/></p>
+        <p> Tactica<input required min="0" max="10" value="0" type="number" name="habilidades[int][tactica]"/></p>
+    </div>
+    <div class="habilidades" id="ref">
+        <label>Habilidades de Reflejos</label>
+        <p> Baston<input required min="0" max="10" value="0" type="number" name="habilidades[ref][baston]"/></p>
+        <p> Espada<input required min="0" max="10" value="0" type="number" name="habilidades[ref][espada]"/></p>
+        <p> Esquivar<input required min="0" max="10" value="0" type="number" name="habilidades[ref][esquivar]"/></p>
+        <p> Hoja Corta<input required min="0" max="10" value="0" type="number" name="habilidades[ref][hojacorta]"/></p>
+        <p> Mele<input required min="0" max="10" value="0" type="number" name="habilidades[ref][mele]"/></p>
+        <p> Montar<input required min="0" max="10" value="0" type="number" name="habilidades[ref][montar]"/></p>
+        <p> Navegar<input required min="0" max="10" value="0" type="number" name="habilidades[ref][navegar]"/></p>
+        <p> Pelea<input required min="0" max="10" value="0" type="number" name="habilidades[ref][pelea]"/></p>
+    </div>
+    <div class="habilidades" id="des">
+        <label>Habilidades de Destreza</label>
+        <p> Arco<input required min="0" max="10" value="0" type="number" name="habilidades[des][arco]"/></p>
+        <p> Atletismo<input required min="0" max="10" value="0" type="number" name="habilidades[des][atletismo]"/></p>        
+        <p> Ballesta<input required min="0" max="10" value="0" type="number" name="habilidades[des][ballesta]"/></p>
+        <p> Juego de Manos<input required min="0" max="10" value="0" type="number" name="habilidades[des][juegoDeManos]"/></p>
+        <p> Sigilo<input required min="0" max="10" value="0" type="number" name="habilidades[des][sigilo]"/></p>
+    </div>
+    <div class="habilidades" id="tco">
+        <label>Habilidades de Tipo Corporal</label>
+        <p> Proeza de Fuerza<input required min="0" max="10" value="0" type="number" name="habilidades[tco][fuerza]"/></p>
+        <p> Resistencia<input required min="0" max="10" value="0" type="number" name="habilidades[tco][resistencia]"/></p>
+
+    </div>
+    <div class="habilidades" id="emp">
+        <label>Habilidades de Empatia</label>
+        <p> Bellas Artes<input required min="0" max="10" value="0" type="number" name="habilidades[emp][bellasArtes]"/></p>
+        <p> Carisma<input required min="0" max="10" value="0" type="number" name="habilidades[emp][carisma]"/></p>
+        <p> Engaño<input required min="0" max="10" value="0" type="number" name="habilidades[emp][engano]"/></p>
+        <p> Interpretar<input required min="0" max="10" value="0" type="number" name="habilidades[emp][interpretar]"/></p>
+        <p> Juego<input required min="0" max="10" value="0" type="number" name="habilidades[emp][juego]"/></p>
+        <p> Liderazgo<input required min="0" max="10" value="0" type="number" name="habilidades[emp][liderazgo]"/></p>
+        <p> Percepcion Humana<input required min="0" max="10" value="0" type="number" name="habilidades[emp][pHumana]"/></p>
+        <p> Persuasion<input required min="0" max="10" value="0" type="number" name="habilidades[emp][persuasion]"/></p>
+        <p> Seduccion<input required min="0" max="10" value="0" type="number" name="habilidades[emp][seduccion]"/></p>
+        <p> Estilo<input required min="0" max="10" value="0" type="number" name="habilidades[emp][estilo]"/></p>
+    </div>
+    <div class="habilidades" id="tec">
+        <label>Habilidades de Tecnica</label>
+        <p> Abrir Cerraduras<input required min="0" max="10" value="0" type="number" name="habilidades[tec][cerraduras]"/></p>
+        <p> Alquimia<input required min="0" max="10" value="0" type="number" name="habilidades[tec][alquimia]"/></p>
+        <p> Artesania<input required min="0" max="10" value="0" type="number" name="habilidades[tec][artesania]"/></p>
+        <p> Disfraz<input required min="0" max="10" value="0" type="number" name="habilidades[tec][disfraz]"/></p>
+        <p> Falsificacion<input required min="0" max="10" value="0" type="number" name="habilidades[tec][falsificacion]"/></p>
+        <p> Preparar Trampas<input required min="0" max="10" value="0" type="number" name="habilidades[tec][trampas]"/></p>
+        <p> Primeros Auxilios<input required min="0" max="10" value="0" type="number" name="habilidades[tec][primerosAuxilios]"/></p>
+    </div>
+    <div class="habilidades" id="vol">
+        <label>Habilidades de Voluntad</label>
+        <p> Coraje<input required min="0" max="10" value="0" type="number" name="habilidades[vol][coraje]"/></p>
+        <p> Elaborar Rituales<input required min="0" max="10" value="0" type="number" name="habilidades[vol][rituales]"/></p>
+        <p> Intimidar<input required min="0" max="10" value="0" type="number" name="habilidades[vol][intimidar]"/></p>
+        <p> Lanzar Hechizos<input required min="0" max="10" value="0" type="number" name="habilidades[vol][hechizos]"/></p>
+        <p> Resistir Coaccion<input required min="0" max="10" value="0" type="number" name="habilidades[vol][resistirCoaccion]"/></p>
+        <p> Resistir Magia<input required min="0" max="10" value="0" type="number" name="habilidades[vol][resistirMagia]"/></p>
+        <p> Urdir Maleficios<input required min="0" max="10" value="0" type="number" name="habilidades[vol][maleficios]"/></p>
+    </div>
     <p><input type="submit" /></p>
    </form>
 
    <form action="abrir.php" method="post">
-<p>Seleccione un personaje existente: 
-<p><input type="file" name="personaje">:
+<p>Seleccione un personaje existente: </p>
+<p><input type="file" name="personaje">:</p>
     <p><input type="submit" /></p>
    </form>
 
