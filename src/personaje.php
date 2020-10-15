@@ -89,4 +89,8 @@ class Personaje implements JsonSerializable
     {
         return $this->caracteristicasDerivadas[$derivada];
     }
+    public function getHabilidades()
+    {
+        return $this->habilidades;
+    }
 }
