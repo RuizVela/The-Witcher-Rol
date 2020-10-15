@@ -93,4 +93,12 @@ class Personaje implements JsonSerializable
     {
         return $this->habilidades;
     }
+    public function getHabilidad($habilidad)
+    {
+        foreach($this->habilidades as $grupos)
+        {
+            if(key_exists($habilidad,$grupos))
+            return $grupos[$habilidad];
+        }
+    }
 }
