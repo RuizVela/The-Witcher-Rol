@@ -1,12 +1,12 @@
 <?php 
-require __DIR__ . "/../src/Personaje.php";
-require __DIR__ . "/../src/PersonajeController.php";
-$personaje = PersonajeController::abrir($_POST['personaje']);
-foreach( array_keys($personaje->getCaracteristicas()) as $caracteristica)
+require __DIR__ . "/../src/PersonajeFicha.php";
+require __DIR__ . "/../src/PersonajeFichaController.php";
+$personajeFicha = PersonajeFichaController::abrir($_POST['personajeFicha']);
+foreach( array_keys($personajeFicha->getCaracteristicas()) as $caracteristica)
 {   echo $caracteristica;
-    echo $personaje->getCaracteristica($caracteristica)."<br />";
+    echo $personajeFicha->getCaracteristica($caracteristica)."<br />";
 }
-foreach( array_keys($personaje->getCaracteristicasDerivadas()) as $caracteristica)
+foreach( array_keys($personajeFicha->getCaracteristicasDerivadas()) as $caracteristica)
 {   echo $caracteristica;
-    echo $personaje->getCaracteristicaDerivada($caracteristica)."<br />";
+    echo $personajeFicha->getCaracteristicaDerivada($caracteristica)."<br />";
 }

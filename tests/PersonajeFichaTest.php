@@ -1,9 +1,9 @@
 <?php 
 use PHPUnit\Framework\TestCase;
-require __DIR__ . "/../src/Personaje.php";
-require __DIR__ . "/../src/PersonajeController.php";
+require __DIR__ . "/../src/PersonajeFicha.php";
+require __DIR__ . "/../src/PersonajeFichaController.php";
 
-class PersonajeTest extends TestCase
+class PersonajeFichaTest extends TestCase
 {
     private $nombre = 'Geralt de Rivia';
     private $caracteristicas = array(
@@ -27,56 +27,56 @@ class PersonajeTest extends TestCase
         'vol'=>array()
     );
     
-    private $personaje;
+    private $personajeFicha;
     public function setUp() :void
     {
         parent::setUp();
-        $this->personaje = new Personaje($this->nombre, $this->caracteristicas, $this->habilidades);
+        $this->personajeFicha = new PersonajeFicha($this->nombre, $this->caracteristicas, $this->habilidades);
     }
     public function test_constructor_de_caracteristicas_funciona()
     {
 
-        $this->assertEquals($this->personaje->getCaracteristica('int'),$this->caracteristicas['int']);
+        $this->assertEquals($this->personajeFicha->getCaracteristica('int'),$this->caracteristicas['int']);
     }
 
     public function test_setAgu_funciona()
     {
         $agu=55;
-        $this->assertEquals($this->personaje->getCaracteristicaDerivada('agu'),$agu);
+        $this->assertEquals($this->personajeFicha->getCaracteristicaDerivada('agu'),$agu);
     }
     public function test_setPv_funciona()
     {
         $pv=55;
-        $this->assertEquals($this->personaje->getCaracteristicaDerivada('pv'),$pv);
+        $this->assertEquals($this->personajeFicha->getCaracteristicaDerivada('pv'),$pv);
     }
     public function test_setAtu_funciona()
     {
         $atu = 10;
-        $this->assertEquals($this->personaje->getCaracteristicaDerivada('atu'),$atu);
+        $this->assertEquals($this->personajeFicha->getCaracteristicaDerivada('atu'),$atu);
     }
     public function test_setRec_funciona()
     {
         $rec=11;
-        $this->assertEquals($this->personaje->getCaracteristicaDerivada('rec'),$rec);
+        $this->assertEquals($this->personajeFicha->getCaracteristicaDerivada('rec'),$rec);
     }
     public function test_setCarr_funciona()
     {
         $carr=6;
-        $this->assertEquals($this->personaje->getCaracteristicaDerivada('carr'),$carr);
+        $this->assertEquals($this->personajeFicha->getCaracteristicaDerivada('carr'),$carr);
     }
     public function test_setSal_funciona()
     {
         $sal=1;
-        $this->assertEquals($this->personaje->getCaracteristicaDerivada('sal'),$sal);
+        $this->assertEquals($this->personajeFicha->getCaracteristicaDerivada('sal'),$sal);
     }
     public function test_setEst_funciona()
     {
         $est=100;
-        $this->assertEquals($this->personaje->getCaracteristicaDerivada('est'),$est);
+        $this->assertEquals($this->personajeFicha->getCaracteristicaDerivada('est'),$est);
     }
     public function test_guardar_hoja_de_personaje()
     {
-        PersonajeController::crear($this->personaje);
+        PersonajeFichaController::crear($this->personajeFicha);
         $file = $this->nombre.'.json';
         $personaje_json = json_decode(file_get_contents($file));
         $file_writed = $personaje_json->nombre == $this->nombre;
@@ -85,10 +85,10 @@ class PersonajeTest extends TestCase
     }
     public function test_abrir_hoja_de_personaje()
     {   
-        PersonajeController::crear($this->personaje);
+        PersonajeFichaController::crear($this->personajeFicha);
         $file = $this->nombre.'.json';
-        $personaje = PersonajeController::abrir($file);
-        $this->assertEquals($personaje,$this->personaje);
+        $personajeFicha = PersonajeFichaController::abrir($file);
+        $this->assertEquals($personajeFicha,$this->personajeFicha);
         unlink($file);
     }
 }

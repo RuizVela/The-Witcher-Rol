@@ -1,8 +1,8 @@
 <?php 
-require __DIR__ . "/../src/Personaje.php";
-require __DIR__ . "/../src/PersonajeController.php";
-$personaje = new Personaje($_POST['nombre'],$_POST['caracteristicas'],$_POST['habilidades']);
-PersonajeController::crear($personaje);
+require __DIR__ . "/../src/PersonajeFicha.php";
+require __DIR__ . "/../src/PersonajeFichaController.php";
+$personajeFicha = new PersonajeFicha($_POST['nombre'],$_POST['caracteristicas'],$_POST['habilidades']);
+PersonajeFichaController::crear($personajeFicha);
 header("Location: home.html");
 die;
 

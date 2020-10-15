@@ -1,6 +1,6 @@
 <?php
 
-class Personaje implements JsonSerializable 
+class PersonajeFicha implements JsonSerializable 
 {
     function __construct($nombre,$caracteristicas,$habilidades)
     {
