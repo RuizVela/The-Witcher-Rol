@@ -5,11 +5,13 @@ class Arma
     function __construct($arma)
     {
         $this->habilidad = $arma['habilidad'];
+        $this->caracteristica = $arma['caracteristica'];
         $this->precision = $arma['precision'];
         $this->daño = $arma['daño'];
         $this->fiabilidad = $arma['fiabilidad'];
     }
     private $habilidad;
+    private $caracteristica;
     private $precision;
     private $daño;
     public $fiabilidad;
