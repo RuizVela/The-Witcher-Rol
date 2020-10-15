@@ -8,24 +8,12 @@ class Personaje implements JsonSerializable
         $this->caracteristicas=$caracteristicas;
         $this->setCaracteristicasDerivadas();
         $this->habilidades = $habilidades;
-        $this->habilidadesInt = $this->habilidades['int'];
-        $this->habilidadesRef = $this->habilidades['ref'];
-        $this->habilidadesDes = $this->habilidades['des'];
-        $this->habilidadesTco = $this->habilidades['tco'];
-        $this->habilidadesEmp = $this->habilidades['emp'];
-        $this->habilidadesTec = $this->habilidades['tec'];
-        $this->habilidadesVol = $this->habilidades['vol'];
+
     }
     private $nombre;
     private $caracteristicas;
     private $caracteristicasDerivadas;
-    private $habilidadesInt;
-    private $habilidadesRef;
-    private $habilidadesDes;
-    private $habilidadesTco;
-    private $habilidadesEmp;
-    private $habilidadesTec;
-    private $habilidadesVol;
+    private $habilidades;
 
     public function jsonSerialize()
     {
