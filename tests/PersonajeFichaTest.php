@@ -74,6 +74,11 @@ class PersonajeFichaTest extends TestCase
         $est=100;
         $this->assertEquals($this->personajeFicha->getCaracteristicaDerivada('est'),$est);
     }
+    public function test_setDañoAdicional_funciona()
+    {
+        $dañoAdicional = 4;
+        $this->assertEquals($this->personajeFicha->getDañoAdicional(), $dañoAdicional);
+    }
     public function test_guardar_hoja_de_personaje()
     {
         PersonajeFichaController::crear($this->personajeFicha);

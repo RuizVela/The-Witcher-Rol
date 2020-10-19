@@ -14,6 +14,7 @@ class PersonajeFicha implements JsonSerializable
     private $caracteristicas;
     private $caracteristicasDerivadas;
     private $habilidades;
+    private $dañoAdicional;
 
     public function jsonSerialize()
     {
@@ -29,6 +30,7 @@ class PersonajeFicha implements JsonSerializable
         $this->setCarr();
         $this->setSal();
         $this->setEst();
+        $this->setDañoAdicional();
     }
     private function calcularFisico()
     {
@@ -73,6 +75,16 @@ class PersonajeFicha implements JsonSerializable
         $est = $this->caracteristicas['tco']*10;
         $this->caracteristicasDerivadas['est']=$est;
     }
+    private function setDañoAdicional()
+    {
+        $valor = $this->caracteristicas['tco'] -5;
+        if ($valor%2!=0)
+        {   
+            $this->dañoAdicional = $valor-1;
+            return;
+        }
+        $this->dañoAdicional = $valor;
+    }
     public function getCaracteristicas()
     {
         return $this->caracteristicas;
@@ -88,6 +100,10 @@ class PersonajeFicha implements JsonSerializable
     public function getCaracteristicaDerivada($derivada)
     {
         return $this->caracteristicasDerivadas[$derivada];
+    }
+    public function getDañoAdicional()
+    {
+        return $this->dañoAdicional;
     }
     public function getHabilidades()
     {
