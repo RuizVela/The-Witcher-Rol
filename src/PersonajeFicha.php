@@ -1,4 +1,7 @@
 <?php
+namespace src;
+
+use JsonSerializable;
 
 class PersonajeFicha implements JsonSerializable 
 {

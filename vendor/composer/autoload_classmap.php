@@ -602,4 +602,9 @@ return array(
     'TheSeer\\Tokenizer\\TokenCollectionException' => $vendorDir . '/theseer/tokenizer/src/TokenCollectionException.php',
     'TheSeer\\Tokenizer\\Tokenizer' => $vendorDir . '/theseer/tokenizer/src/Tokenizer.php',
     'TheSeer\\Tokenizer\\XMLSerializer' => $vendorDir . '/theseer/tokenizer/src/XMLSerializer.php',
+    'src\\Arma' => $baseDir . '/src/Arma.php',
+    'src\\Armadura' => $baseDir . '/src/Armadura.php',
+    'src\\Personaje' => $baseDir . '/src/Personaje.php',
+    'src\\PersonajeFicha' => $baseDir . '/src/PersonajeFicha.php',
+    'src\\PersonajeFichaController' => $baseDir . '/src/PersonajeFichaController.php',
 );

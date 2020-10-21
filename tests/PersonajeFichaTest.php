@@ -1,7 +1,7 @@
 <?php 
 use PHPUnit\Framework\TestCase;
-require __DIR__ . "/../src/PersonajeFicha.php";
-require __DIR__ . "/../src/PersonajeFichaController.php";
+use src\PersonajeFicha;
+use src\PersonajeFichaController;
 
 class PersonajeFichaTest extends TestCase
 {

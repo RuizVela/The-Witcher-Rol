@@ -1,6 +1,6 @@
 <?php 
 use PHPUnit\Framework\TestCase;
-require __DIR__ . "/../src/Arma.php";
+use src\Arma;
 
 class ArmaTest extends TestCase
 {
