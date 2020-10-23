@@ -71,6 +71,7 @@ class ComposerStaticInit48bc277d01bec35ce9960cbfa01b3940
     );
 
     public static $classMap = array (
+        'IPersonaje' => __DIR__ . '/../..' . '/src/IPersonaje.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\ActualValueIsNotAnObjectException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/ActualValueIsNotAnObjectException.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
