@@ -67,7 +67,7 @@ class PersonajeTest extends TestCase implements IPersonaje
     {
         $arma = array('nombre'=>'Espada de Acero','habilidad'=>'espada','precision'=>0,'daño'=>[2,2],'fiabilidad'=>10, 'caracteristica'=>'ref');
         $ataque = $this->personaje->atacar($arma);
-        $ataque += $this->personaje->comprobarResultado($this->personaje->lanzarDado());
-        var_dump('que'.$ataque);die;
+        $expected = 11;
+        $this->assertEquals($ataque, $expected);
     }
 }
