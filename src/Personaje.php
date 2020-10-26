@@ -21,4 +21,13 @@ class Personaje extends PersonajeFicha implements IPersonaje
         }
         return $resultado;
     }
+    public function atacar($arma)
+    {
+        $habilidad = $this->getHabilidad($arma['habilidad']);
+        $caracteristica = $this->getCaracteristica($arma['caracteristica']);
+        $precision = $arma['precision'];
+        $ataque = $habilidad+$caracteristica+$precision;
+        //TODO: Sumar dado a parte.
+        return $ataque;
+    }
 }

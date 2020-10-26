@@ -21,7 +21,7 @@ class PersonajeTest extends TestCase implements IPersonaje
     );
     private $habilidades = array(
         'int'=>array('advertir'=>1, 'callejeo'=>2),
-        'ref'=>array('pelea'=>6, 'esquivar'=>6),
+        'ref'=>array('espada'=>6, 'esquivar'=>6),
         'des'=>array(),
         'tco'=>array(),
         'emp'=>array(),
@@ -45,6 +45,12 @@ class PersonajeTest extends TestCase implements IPersonaje
         }
         return $resultado;
     }
+    function atacar($arma)
+    {
+        $personaje = new Personaje($this->nombre, $this->caracteristicas, $this->habilidades);
+        $ataque = $personaje->atacar($arma);
+        return $ataque;
+    }
     public function setUp() :void
     {
         parent::setUp();
@@ -56,5 +62,12 @@ class PersonajeTest extends TestCase implements IPersonaje
         $resultado = $this->personaje->comprobarResultado($dado);
         $expected = 16;
         $this->assertEquals($expected, $resultado);
+    }
+    public function test_atacar_devuelve_un_entero()
+    {
+        $arma = array('nombre'=>'Espada de Acero','habilidad'=>'espada','precision'=>0,'daño'=>[2,2],'fiabilidad'=>10, 'caracteristica'=>'ref');
+        $ataque = $this->personaje->atacar($arma);
+        $ataque += $this->personaje->comprobarResultado($this->personaje->lanzarDado());
+        var_dump('que'.$ataque);die;
     }
 }
