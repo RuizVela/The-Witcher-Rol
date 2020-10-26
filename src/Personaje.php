@@ -30,4 +30,10 @@ class Personaje extends PersonajeFicha implements IPersonaje
         //TODO: Sumar dado a parte.
         return $ataque;
     }
+    public function esquivar()
+    {
+        $esquiva = $this->getHabilidad('esquivar')+$this->getCaracteristica('ref');
+        //TODO: Sumar dado a parte.
+        return $esquiva;
+    }
 }

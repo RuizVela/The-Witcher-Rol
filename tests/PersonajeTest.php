@@ -51,6 +51,12 @@ class PersonajeTest extends TestCase implements IPersonaje
         $ataque = $personaje->atacar($arma);
         return $ataque;
     }
+    function esquivar()
+    {
+        $personaje = new Personaje($this->nombre, $this->caracteristicas, $this->habilidades);
+        $esquiva = $personaje->esquivar();
+        return $esquiva;
+    }
     public function setUp() :void
     {
         parent::setUp();
@@ -69,5 +75,11 @@ class PersonajeTest extends TestCase implements IPersonaje
         $ataque = $this->personaje->atacar($arma);
         $expected = 11;
         $this->assertEquals($ataque, $expected);
+    }
+    public function test_esquivar_devuelve_un_entero()
+    {
+        $esquivar = $this->personaje->esquivar();
+        $expected = 11;
+        $this->assertEquals($esquivar,$expected);
     }
 }
