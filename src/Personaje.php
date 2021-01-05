@@ -1,26 +1,8 @@
 <?php
 namespace src;
 
-use IPersonaje;
-
-class Personaje extends PersonajeFicha implements IPersonaje
+class Personaje extends PersonajeFicha
 {
-
-    public function lanzarDado()
-    {
-        $dado = rand(1,10);
-        return $dado;
-    }
-    public function comprobarResultado($dado)
-    {
-        $resultado = $dado;
-        while($dado==10)
-        {
-            $dado = $this->lanzarDado();
-            $resultado += $dado;
-        }
-        return $resultado;
-    }
     public function atacar($arma)
     {
         $habilidad = $this->getHabilidad($arma['habilidad']);
@@ -30,10 +12,11 @@ class Personaje extends PersonajeFicha implements IPersonaje
         //TODO: Sumar dado a parte.
         return $ataque;
     }
-    public function esquivar()
+    public function esquivar($ataque)
     {
         $esquiva = $this->getHabilidad('esquivar')+$this->getCaracteristica('ref');
+        $diferencia = $ataque - $esquiva;
         //TODO: Sumar dado a parte.
-        return $esquiva;
+        return $diferencia;
     }
 }
